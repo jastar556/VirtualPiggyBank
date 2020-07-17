@@ -27,6 +27,21 @@ namespace VirtualPiggyBank
             TableView.Source = new AccountListTableDataSource(this);
         }
 
+        public void AccountSelected(Account SelectedAccount)
+        {
+            AccountViewController accountViewController =
+                this.Storyboard.InstantiateViewController("AccountViewController") as AccountViewController;
+
+            if(accountViewController != null)
+            {
+                accountViewController.ModalTransitionStyle = UIModalTransitionStyle.CoverVertical;
+                accountViewController.ModalPresentationStyle = UIModalPresentationStyle.FullScreen;
+                accountViewController.Account = SelectedAccount;
+
+                PresentViewController(accountViewController, true, null);
+            } 
+        }
+
         void populateTestAccounts()
         {
             Accounts.Add(new Account());

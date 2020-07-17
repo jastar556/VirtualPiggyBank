@@ -40,5 +40,10 @@ namespace VirtualPiggyBank.DataSource
         {
             return Accounts.Count;
         }
+
+        public override void RowSelected(UITableView tableView, NSIndexPath indexPath)
+        {
+            callingController.AccountSelected(Accounts[indexPath.Row]);
+        }
     }
 }

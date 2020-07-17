@@ -73,15 +73,12 @@
     <Compile Include="AccountListViewController.designer.cs">
       <DependentUpon>AccountListViewController.cs</DependentUpon>
     </Compile>
-    <Compile Include="AccountDetailViewController.cs" />
-    <Compile Include="AccountDetailViewController.designer.cs">
-      <DependentUpon>AccountDetailViewController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="AccountMaintenanceViewController.cs" />
-    <Compile Include="AccountMaintenanceViewController.designer.cs">
-      <DependentUpon>AccountMaintenanceViewController.cs</DependentUpon>
-    </Compile>
     <Compile Include="DataSource\AccountListTableDataSource.cs" />
+    <Compile Include="DataSource\AccountTransactionTableDataSource.cs" />
+    <Compile Include="AccountViewController.cs" />
+    <Compile Include="AccountViewController.designer.cs">
+      <DependentUpon>AccountViewController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FirstViewController.cs" />
