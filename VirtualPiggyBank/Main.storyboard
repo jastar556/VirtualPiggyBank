@@ -73,7 +73,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="3680">
             <objects>
-                <viewController id="3681" sceneMemberID="viewController" customClass="AccountViewController" storyboardIdentifier="AccountViewController">
+                <viewController id="3681" sceneMemberID="viewController" customClass="AccountViewController" storyboardIdentifier="AccountViewController" title="AccountViewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3678"/>
                         <viewControllerLayoutGuide type="bottom" id="3679"/>
@@ -142,6 +142,10 @@
                                     <constraint id="3704" firstAttribute="height" constant="52"/>
                                 </constraints>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="5152" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES">
+                                <rect key="frame" x="26" y="30" width="46" height="30"/>
+                                <state key="normal" title="Back"/>
+                            </button>
                         </subviews>
                         <constraints>
                             <constraint id="3756" firstItem="3690" firstAttribute="top" secondItem="3682" secondAttribute="topMargin" constant="50"/>
@@ -156,8 +160,17 @@
                             <constraint id="3994" firstItem="3679" firstAttribute="top" secondItem="3697" secondAttribute="bottom" constant="15"/>
                             <constraint id="3999" firstItem="3697" firstAttribute="leading" secondItem="3682" secondAttribute="leadingMargin"/>
                             <constraint id="4003" firstAttribute="trailingMargin" secondItem="3697" secondAttribute="trailing"/>
+                            <constraint id="5214" firstItem="5152" firstAttribute="top" secondItem="3682" secondAttribute="topMargin" constant="10"/>
+                            <constraint id="5219" firstItem="5152" firstAttribute="leading" secondItem="3682" secondAttribute="leadingMargin" constant="10"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="AccountNameLabel" destination="3690" id="name-outlet-3690"/>
+                        <outlet property="DepositButton" destination="3691" id="name-outlet-3691"/>
+                        <outlet property="WithdrawlButton" destination="3700" id="name-outlet-3700"/>
+                        <outlet property="TransactionTableView" destination="3697" id="name-outlet-3697"/>
+                        <outlet property="BackButton" destination="5152" id="name-outlet-5152"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3683" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

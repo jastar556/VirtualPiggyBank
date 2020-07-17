@@ -19,6 +19,11 @@ namespace VirtualPiggyBank
 
             AccountNameLabel.Text = Account.Name;
             // Perform any additional setup after loading the view, typically from a nib.
+
+            BackButton.TouchUpInside += (object sender, EventArgs e) =>
+            {
+                DismissModalViewController(true);
+            };
         }
 
         public override void DidReceiveMemoryWarning()

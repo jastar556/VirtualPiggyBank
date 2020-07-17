@@ -10,7 +10,7 @@ using System.CodeDom.Compiler;
 
 namespace VirtualPiggyBank
 {
-    [Register ("FirstViewController")]
+    [Register ("AccountViewController")]
     partial class AccountViewController
     {
         [Outlet]
@@ -19,15 +19,19 @@ namespace VirtualPiggyBank
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton BackButton { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton DepositButton { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIButton WithdrawlButton { get; set; }
+        UIKit.UITableView TransactionTableView { get; set; }
 
-        [Action ("UIButton463_TouchUpInside:")]
+        [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        partial void UIButton463_TouchUpInside (UIKit.UIButton sender);
+        UIKit.UIButton WithdrawlButton { get; set; }
 
         void ReleaseDesignerOutlets ()
         {
@@ -36,9 +40,19 @@ namespace VirtualPiggyBank
                 AccountNameLabel = null;
             }
 
+            if (BackButton != null) {
+                BackButton.Dispose ();
+                BackButton = null;
+            }
+
             if (DepositButton != null) {
                 DepositButton.Dispose ();
                 DepositButton = null;
+            }
+
+            if (TransactionTableView != null) {
+                TransactionTableView.Dispose ();
+                TransactionTableView = null;
             }
 
             if (WithdrawlButton != null) {
