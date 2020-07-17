@@ -1,10 +1,15 @@
 ﻿using System;
-
+using SQLite;
 
 namespace VirtualPiggyBank.Core
 {
+
+    [Table("Transactions")]
     public class Transaction
     {
+
+        [PrimaryKey]
+        public Guid TransactionID { get; set; }
 
         public string Name { get; set; }
 

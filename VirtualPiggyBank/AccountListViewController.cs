@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using UIKit;
 using VirtualPiggyBank.Core;
+using VirtualPiggyBank.Core.Repo;
 using VirtualPiggyBank.DataSource;
 
 namespace VirtualPiggyBank
@@ -22,7 +23,8 @@ namespace VirtualPiggyBank
         {
             base.ViewDidLoad();
 
-            populateTestAccounts();
+            var db = BankRepository.Connection();
+            Accounts = db.CreateCommand("SELECT * FROM UserAccounts").ExecuteQuery<Account>();
 
             TableView.Source = new AccountListTableDataSource(this);
         }
@@ -40,18 +42,6 @@ namespace VirtualPiggyBank
 
                 PresentViewController(accountViewController, true, null);
             } 
-        }
-
-        void populateTestAccounts()
-        {
-            Accounts.Add(new Account());
-            Accounts[0].Name = "Teddy";
-            Accounts[0].Balance = 50.43;
-            Accounts[0].Transactions = new List<Transaction>();
-            Accounts[0].Transactions.Add(new Transaction());
-            Accounts[0].Transactions[0].Name = "Birthday";
-            Accounts[0].Transactions[0].Date = DateTime.Today;
-            Accounts[0].Transactions[0].TransAmount = -50;
         }
     }
 }

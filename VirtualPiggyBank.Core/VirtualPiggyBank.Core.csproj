@@ -6,5 +6,10 @@
 
   <ItemGroup>
     <Folder Include="Model\" />
+    <Folder Include="Repo\" />
+    <Folder Include="Connections\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="sqlite-net-pcl" Version="1.7.335" />
   </ItemGroup>
 </Project>
