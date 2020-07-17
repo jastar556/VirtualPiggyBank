@@ -7,7 +7,7 @@ namespace VirtualPiggyBank
 {
     public partial class FirstViewController : UIViewController
     {
-        Account Account;
+        public Account Account;
 
         public FirstViewController(IntPtr handle) : base(handle)
         {
@@ -16,8 +16,6 @@ namespace VirtualPiggyBank
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-
-            
             // Perform any additional setup after loading the view, typically from a nib.
         }
 
@@ -26,5 +24,7 @@ namespace VirtualPiggyBank
             base.DidReceiveMemoryWarning();
             // Release any cached data, images, etc that aren't in use.
         }
-    }
+
+        
+}
 }
