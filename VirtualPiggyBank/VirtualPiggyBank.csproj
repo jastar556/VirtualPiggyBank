@@ -75,19 +75,11 @@
     </Compile>
     <Compile Include="DataSource\AccountListTableDataSource.cs" />
     <Compile Include="DataSource\AccountTransactionTableDataSource.cs" />
+  </ItemGroup>
+  <ItemGroup>
     <Compile Include="AccountViewController.cs" />
     <Compile Include="AccountViewController.designer.cs">
       <DependentUpon>AccountViewController.cs</DependentUpon>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="FirstViewController.cs" />
-    <Compile Include="FirstViewController.designer.cs">
-      <DependentUpon>FirstViewController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SecondViewController.cs" />
-    <Compile Include="SecondViewController.designer.cs">
-      <DependentUpon>SecondViewController.cs</DependentUpon>
     </Compile>
     <InterfaceDefinition Include="Main.storyboard" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json">
