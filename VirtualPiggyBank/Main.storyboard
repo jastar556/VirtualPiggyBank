@@ -346,5 +346,22 @@
             </objects>
             <point key="canvasLocation" x="-523" y="-161"/>
         </scene>
+        <scene sceneID="16412">
+            <objects>
+                <viewController id="16413" sceneMemberID="viewController" customClass="SettingsViewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="16410"/>
+                        <viewControllerLayoutGuide type="bottom" id="16411"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="16414">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="16415" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1479" y="587"/>
+        </scene>
     </scenes>
 </document>
