@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UIKit;
 using VirtualPiggyBank.Core;
 using VirtualPiggyBank.Core.Repo;
+using VirtualPiggyBank.Core.Service;
 using VirtualPiggyBank.DataSource;
 
 namespace VirtualPiggyBank
@@ -24,6 +25,7 @@ namespace VirtualPiggyBank
             base.ViewDidLoad();
 
             var db = BankRepository.Connection();
+            
             Accounts = db.CreateCommand("SELECT * FROM UserAccounts").ExecuteQuery<Account>();
 
             TableView.Source = new AccountListTableDataSource(this);

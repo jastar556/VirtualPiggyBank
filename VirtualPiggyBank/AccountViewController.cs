@@ -2,6 +2,9 @@
 using Foundation;
 using UIKit;
 using VirtualPiggyBank.Core;
+using VirtualPiggyBank.Core.Repo;
+using VirtualPiggyBank.Core.Service;
+using VirtualPiggyBank.DataSource;
 
 namespace VirtualPiggyBank
 {
@@ -17,19 +20,18 @@ namespace VirtualPiggyBank
         {
             base.ViewDidLoad();
 
+            var db = BankRepository.Connection();
+
             AccountNameLabel.Text = Account.Name;
-            // Perform any additional setup after loading the view, typically from a nib.
+            BalanceLabel.Text = "$" + Account.Balance.ToString();
+
+
+            TransactionTableView.Source = new AccountTransactionTableDataSource(this);
 
             BackButton.TouchUpInside += (object sender, EventArgs e) =>
             {
                 DismissModalViewController(true);
             };
-        }
-
-        public override void DidReceiveMemoryWarning()
-        {
-            base.DidReceiveMemoryWarning();
-            // Release any cached data, images, etc that aren't in use.
         }
     }
 }

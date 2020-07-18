@@ -23,6 +23,10 @@ namespace VirtualPiggyBank
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel BalanceLabel { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton DepositButton { get; set; }
 
         [Outlet]
@@ -43,6 +47,11 @@ namespace VirtualPiggyBank
             if (BackButton != null) {
                 BackButton.Dispose ();
                 BackButton = null;
+            }
+
+            if (BalanceLabel != null) {
+                BalanceLabel.Dispose ();
+                BalanceLabel = null;
             }
 
             if (DepositButton != null) {

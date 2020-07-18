@@ -8,8 +8,10 @@ namespace VirtualPiggyBank.Core
     public class Transaction
     {
 
-        [PrimaryKey]
+        [PrimaryKey, Unique]
         public Guid TransactionID { get; set; }
+
+        public Guid Account { get; set; }
 
         public string Name { get; set; }
 
