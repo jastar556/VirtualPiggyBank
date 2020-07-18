@@ -84,13 +84,13 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3690" translatesAutoresizingMaskIntoConstraints="NO">
-                                <rect key="frame" x="26" y="70" width="323" height="32.5"/>
+                                <rect key="frame" x="26" y="55" width="323" height="32.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3691" translatesAutoresizingMaskIntoConstraints="NO">
-                                <rect key="frame" x="41" y="150" width="130" height="52"/>
+                                <rect key="frame" x="41" y="126" width="130" height="52"/>
                                 <color key="backgroundColor" colorSpace="custom" customColorSpace="sRGB" red="0.17829167842865" green="0.204309225082397" blue="0.181193262338638" alpha="1"/>
                                 <color key="tintColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
@@ -109,8 +109,8 @@
                                     <constraint id="3696" firstAttribute="height" constant="52"/>
                                 </constraints>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="3697" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES">
-                                <rect key="frame" x="16" y="254.5" width="343" height="397.5"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="3697" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="16" y="253" width="343" height="399"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="3698" reuseIdentifier="ComponentCell" style="IBUITableViewCellStyleValue1" textLabel="7500" detailTextLabel="7501">
@@ -140,7 +140,7 @@
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3700" translatesAutoresizingMaskIntoConstraints="NO">
-                                <rect key="frame" x="204" y="150" width="130" height="52"/>
+                                <rect key="frame" x="204" y="126" width="130" height="52"/>
                                 <color key="backgroundColor" colorSpace="custom" customColorSpace="sRGB" red="0.17829167842865" green="0.204309225082397" blue="0.181193262338638" alpha="1"/>
                                 <color key="tintColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
@@ -163,22 +163,42 @@
                                 <state key="normal" title="Back"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5483" translatesAutoresizingMaskIntoConstraints="NO">
-                                <rect key="frame" x="26" y="110" width="323" height="20.5"/>
+                                <rect key="frame" x="26" y="90.5" width="323" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="15959" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="111" y="188" width="153" height="52"/>
+                                <color key="backgroundColor" colorSpace="custom" customColorSpace="sRGB" red="0.17829167842865" green="0.204309225082397" blue="0.181193262338638" alpha="1"/>
+                                <color key="tintColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="Quick Deposit"/>
+                                <connections>
+                                    <action selector="UIButton463_TouchUpInside:" destination="15961" id="15960" eventType="touchUpInside"/>
+                                    <action selector="UIButton14031_TouchUpInside:" destination="15963" id="15962" eventType="touchUpInside"/>
+                                </connections>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute keyPath="layer.cornerRadius" type="number">
+                                        <real key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <constraints>
+                                    <constraint id="15964" firstAttribute="width" secondItem="15959" secondAttribute="height" multiplier="5:2"/>
+                                    <constraint id="15965" firstAttribute="height" constant="52"/>
+                                </constraints>
+                            </button>
                         </subviews>
                         <constraints>
-                            <constraint id="3756" firstItem="3690" firstAttribute="top" secondItem="3682" secondAttribute="topMargin" constant="50"/>
+                            <constraint id="3756" firstItem="3690" firstAttribute="top" secondItem="3682" secondAttribute="topMargin" constant="35"/>
                             <constraint id="3760" firstItem="3690" firstAttribute="leading" secondItem="3682" secondAttribute="leadingMargin" constant="10"/>
                             <constraint id="3764" firstAttribute="trailingMargin" secondItem="3690" secondAttribute="trailing" constant="10"/>
-                            <constraint id="3807" firstItem="3691" firstAttribute="top" secondItem="5483" secondAttribute="bottom" constant="20"/>
+                            <constraint id="3807" firstItem="3691" firstAttribute="top" secondItem="5483" secondAttribute="bottom" constant="15"/>
                             <constraint id="3815" firstItem="3691" firstAttribute="leading" secondItem="3682" secondAttribute="leadingMargin" constant="25"/>
                             <constraint id="3818" firstItem="3700" firstAttribute="leading" secondItem="3691" secondAttribute="trailing" constant="33"/>
-                            <constraint id="3935" firstItem="3700" firstAttribute="top" secondItem="5483" secondAttribute="bottom" constant="20"/>
+                            <constraint id="3935" firstItem="3700" firstAttribute="top" secondItem="5483" secondAttribute="bottom" constant="15"/>
                             <constraint id="3943" firstAttribute="trailingMargin" secondItem="3700" secondAttribute="trailing" constant="25"/>
-                            <constraint id="3987" firstItem="3697" firstAttribute="top" secondItem="3691" secondAttribute="bottom" constant="50"/>
+                            <constraint id="3987" firstItem="3697" firstAttribute="top" secondItem="3691" secondAttribute="bottom" constant="75"/>
                             <constraint id="3994" firstItem="3679" firstAttribute="top" secondItem="3697" secondAttribute="bottom" constant="15"/>
                             <constraint id="3999" firstItem="3697" firstAttribute="leading" secondItem="3682" secondAttribute="leadingMargin"/>
                             <constraint id="4003" firstAttribute="trailingMargin" secondItem="3697" secondAttribute="trailing"/>
@@ -186,7 +206,10 @@
                             <constraint id="5219" firstItem="5152" firstAttribute="leading" secondItem="3682" secondAttribute="leadingMargin" constant="10"/>
                             <constraint id="5547" firstItem="5483" firstAttribute="leading" secondItem="3682" secondAttribute="leadingMargin" constant="10"/>
                             <constraint id="5553" firstAttribute="trailingMargin" secondItem="5483" secondAttribute="trailing" constant="10"/>
-                            <constraint id="5561" firstItem="5483" firstAttribute="top" secondItem="3690" secondAttribute="bottom" constant="7"/>
+                            <constraint id="5561" firstItem="5483" firstAttribute="top" secondItem="3690" secondAttribute="bottom" constant="3"/>
+                            <constraint id="16033" firstItem="15959" firstAttribute="top" secondItem="3691" secondAttribute="bottom" constant="10"/>
+                            <constraint id="16046" firstItem="15959" firstAttribute="leading" secondItem="3682" secondAttribute="leadingMargin" constant="95"/>
+                            <constraint id="16053" firstAttribute="trailingMargin" secondItem="15959" secondAttribute="trailing" constant="95"/>
                         </constraints>
                     </view>
                     <connections>
@@ -196,6 +219,7 @@
                         <outlet property="TransactionTableView" destination="3697" id="name-outlet-3697"/>
                         <outlet property="BackButton" destination="5152" id="name-outlet-5152"/>
                         <outlet property="BalanceLabel" destination="5483" id="name-outlet-5483"/>
+                        <outlet property="QuickDepositButton" destination="15959" id="name-outlet-15959"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3683" userLabel="First Responder" sceneMemberID="firstResponder"/>

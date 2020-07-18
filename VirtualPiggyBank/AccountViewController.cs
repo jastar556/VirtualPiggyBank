@@ -67,6 +67,25 @@ namespace VirtualPiggyBank
                     PresentViewController(transactionViewController, true, null);
                 }
             };
+
+            QuickDepositButton.TouchUpInside += (object sender, EventArgs e) =>
+            {
+                UIAlertController QuickDepositAlertController = UIAlertController.Create("Quick Deposit", "Select quick deposit option", UIAlertControllerStyle.Alert);
+                QuickDepositAlertController.AddAction(UIAlertAction.Create("Chores", UIAlertActionStyle.Default, Action => {
+                    //Actions when chores is selected.
+                }));
+                QuickDepositAlertController.AddAction(UIAlertAction.Create("Dishes", UIAlertActionStyle.Default, Action => {
+                    //Actions when chores is selected.
+                }));
+                QuickDepositAlertController.AddAction(UIAlertAction.Create("Reading", UIAlertActionStyle.Default, Action => {
+                    //Actions when chores is selected.
+                }));
+                QuickDepositAlertController.AddAction(UIAlertAction.Create("Cancel", UIAlertActionStyle.Cancel, Action =>
+                {
+                    //Actions when chores is selected.
+                }));
+                PresentViewController(QuickDepositAlertController, true, null);
+            };
         }
 
         void reloadPage(NSNotification notification)
