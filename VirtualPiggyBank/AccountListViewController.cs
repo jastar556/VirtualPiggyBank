@@ -36,6 +36,14 @@ namespace VirtualPiggyBank
 
             Accounts = db.CreateCommand("SELECT * FROM UserAccounts").ExecuteQuery<Account>();
 
+            SettingsButton.TouchUpInside += (object sender, EventArgs e) =>
+            {
+                SettingsViewController settingsViewController = this.Storyboard.InstantiateViewController("SettingsViewController") as SettingsViewController;
+                settingsViewController.ModalPresentationStyle = UIModalPresentationStyle.Automatic;
+                settingsViewController.ModalTransitionStyle = UIModalTransitionStyle.CoverVertical;
+                PresentViewController(settingsViewController, true, null);
+            };
+
             TableView.Source = new AccountListTableDataSource(this);
         }
 

@@ -14,5 +14,16 @@ namespace VirtualPiggyBank
     [Register ("AccountListViewController")]
     partial class AccountListViewController
     {
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton SettingsButton { get; set; }
+
+        void ReleaseDesignerOutlets ()
+        {
+            if (SettingsButton != null) {
+                SettingsButton.Dispose ();
+                SettingsButton = null;
+            }
+        }
     }
 }

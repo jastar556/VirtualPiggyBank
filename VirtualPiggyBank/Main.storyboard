@@ -48,7 +48,23 @@
                             <outlet property="delegate" destination="sy4-0m-jSV" id="U86-oy-CKX"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="obZ-7m-o1c" title="Accounts"/>
+                    <navigationItem key="navigationItem" id="obZ-7m-o1c" title="Accounts">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="19653"/>
+                        <rightBarButtonItems>
+                            <barButtonItem style="plain" id="19652"/>
+                            <barButtonItem style="plain" id="20010">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="20009" translatesAutoresizingMaskIntoConstraints="NO" key="customView">
+                                    <rect key="frame" x="0.0" y="0.0" width="46" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <state key="normal" catalog="system" image="wrench.fill"/>
+                                </button>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="SettingsButton" destination="20009" id="name-outlet-20009"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IU1-dG-pHr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -348,7 +364,7 @@
         </scene>
         <scene sceneID="16412">
             <objects>
-                <viewController id="16413" sceneMemberID="viewController" customClass="SettingsViewController">
+                <viewController id="16413" sceneMemberID="viewController" customClass="SettingsViewController" title="SettingsViewController" storyboardIdentifier="SettingsViewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="16410"/>
                         <viewControllerLayoutGuide type="bottom" id="16411"/>
@@ -405,4 +421,7 @@
             <point key="canvasLocation" x="-1479" y="587"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="wrench.fill" catalog="system"/>
+    </resources>
 </document>
