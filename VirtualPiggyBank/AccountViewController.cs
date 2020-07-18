@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
 using Foundation;
 using UIKit;
 using VirtualPiggyBank.Core;
+using VirtualPiggyBank.Core.Model;
 using VirtualPiggyBank.Core.Repo;
 using VirtualPiggyBank.Core.Service;
 using VirtualPiggyBank.DataSource;
@@ -70,16 +72,16 @@ namespace VirtualPiggyBank
 
             QuickDepositButton.TouchUpInside += (object sender, EventArgs e) =>
             {
+                List<QuickDeposit> quickDeposits = db.CreateCommand("SELECT * FROM QuickDepositTypes").ExecuteQuery<QuickDeposit>();
+
                 UIAlertController QuickDepositAlertController = UIAlertController.Create("Quick Deposit", "Select quick deposit option", UIAlertControllerStyle.Alert);
-                QuickDepositAlertController.AddAction(UIAlertAction.Create("Laundry", UIAlertActionStyle.Default, Action => {
-                    QuickDepositTransaction("Laundry");
-                }));
-                QuickDepositAlertController.AddAction(UIAlertAction.Create("Dishes", UIAlertActionStyle.Default, Action => {
-                    //Actions when Dishes is selected.
-                }));
-                QuickDepositAlertController.AddAction(UIAlertAction.Create("Reading", UIAlertActionStyle.Default, Action => {
-                    //Actions when Reading is selected.
-                }));
+
+                foreach(QuickDeposit quickDeposit in quickDeposits)
+                {
+                    QuickDepositAlertController.AddAction(UIAlertAction.Create(quickDeposit.QuickDepositType, UIAlertActionStyle.Default, Action => {
+                        QuickDepositTransaction(quickDeposit.QuickDepositType);
+                    }));
+                }
                 QuickDepositAlertController.AddAction(UIAlertAction.Create("Cancel", UIAlertActionStyle.Cancel, null));
                 PresentViewController(QuickDepositAlertController, true, null);
             };

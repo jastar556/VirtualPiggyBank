@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using SQLite;
-using VirtualPiggyBank.Core.Connections;
+
 
 namespace VirtualPiggyBank.Core.Repo
 {
