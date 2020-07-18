@@ -632,39 +632,32 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\jasta\\.nuget\\packages\\": {},
-    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
+    "/Users/jacobastar/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\jasta\\Source\\Repos\\VirtualPiggyBank\\VirtualPiggyBank\\VirtualPiggyBank.csproj",
+      "projectUniqueName": "/Users/jacobastar/Projects/VirtualPiggyBank/VirtualPiggyBank/VirtualPiggyBank.csproj",
       "projectName": "VirtualPiggyBank",
-      "projectPath": "C:\\Users\\jasta\\Source\\Repos\\VirtualPiggyBank\\VirtualPiggyBank\\VirtualPiggyBank.csproj",
-      "packagesPath": "C:\\Users\\jasta\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\jasta\\Source\\Repos\\VirtualPiggyBank\\VirtualPiggyBank\\obj\\",
+      "projectPath": "/Users/jacobastar/Projects/VirtualPiggyBank/VirtualPiggyBank/VirtualPiggyBank.csproj",
+      "packagesPath": "/Users/jacobastar/.nuget/packages/",
+      "outputPath": "/Users/jacobastar/Projects/VirtualPiggyBank/VirtualPiggyBank/obj/",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
-      "fallbackFolders": [
-        "C:\\Microsoft\\Xamarin\\NuGet\\"
-      ],
       "configFilePaths": [
-        "C:\\Users\\jasta\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "/Users/jacobastar/.config/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "xamarinios10"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "xamarinios10": {
           "projectReferences": {
-            "C:\\Users\\jasta\\Source\\Repos\\VirtualPiggyBank\\VirtualPiggyBank.Core\\VirtualPiggyBank.Core.csproj": {
-              "projectPath": "C:\\Users\\jasta\\Source\\Repos\\VirtualPiggyBank\\VirtualPiggyBank.Core\\VirtualPiggyBank.Core.csproj"
+            "/Users/jacobastar/Projects/VirtualPiggyBank/VirtualPiggyBank.Core/VirtualPiggyBank.Core.csproj": {
+              "projectPath": "/Users/jacobastar/Projects/VirtualPiggyBank/VirtualPiggyBank.Core/VirtualPiggyBank.Core.csproj"
             }
           }
         }
