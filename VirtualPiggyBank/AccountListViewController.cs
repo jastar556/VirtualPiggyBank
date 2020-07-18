@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using UIKit;
 using VirtualPiggyBank.Core;
+using VirtualPiggyBank.Core.Model;
 using VirtualPiggyBank.Core.Repo;
 using VirtualPiggyBank.Core.Service;
 using VirtualPiggyBank.DataSource;
@@ -28,7 +29,7 @@ namespace VirtualPiggyBank
             NSNotificationCenter.DefaultCenter.AddObserver((NSString)"ReloadPage", reloadPage);
 
             var db = BankRepository.Connection();
-            
+
             Accounts = db.CreateCommand("SELECT * FROM UserAccounts").ExecuteQuery<Account>();
 
             TableView.Source = new AccountListTableDataSource(this);
