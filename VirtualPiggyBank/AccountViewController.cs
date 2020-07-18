@@ -75,17 +75,19 @@ namespace VirtualPiggyBank
                     //Actions when chores is selected.
                 }));
                 QuickDepositAlertController.AddAction(UIAlertAction.Create("Dishes", UIAlertActionStyle.Default, Action => {
-                    //Actions when chores is selected.
+                    //Actions when Dishes is selected.
                 }));
                 QuickDepositAlertController.AddAction(UIAlertAction.Create("Reading", UIAlertActionStyle.Default, Action => {
-                    //Actions when chores is selected.
+                    //Actions when Reading is selected.
                 }));
-                QuickDepositAlertController.AddAction(UIAlertAction.Create("Cancel", UIAlertActionStyle.Cancel, Action =>
-                {
-                    //Actions when chores is selected.
-                }));
+                QuickDepositAlertController.AddAction(UIAlertAction.Create("Cancel", UIAlertActionStyle.Cancel, null));
                 PresentViewController(QuickDepositAlertController, true, null);
             };
+        }
+
+        void QuickDepositTransaction()
+        {
+
         }
 
         void reloadPage(NSNotification notification)
