@@ -1,0 +1,9 @@
+C:\Users\jasta\Source\Repos\VirtualPiggyBank\VirtualPiggyBank.Core\bin\Debug\netstandard2.1\VirtualPiggyBank.Core.deps.json
+C:\Users\jasta\Source\Repos\VirtualPiggyBank\VirtualPiggyBank.Core\bin\Debug\netstandard2.1\VirtualPiggyBank.Core.dll
+C:\Users\jasta\Source\Repos\VirtualPiggyBank\VirtualPiggyBank.Core\bin\Debug\netstandard2.1\VirtualPiggyBank.Core.pdb
+C:\Users\jasta\Source\Repos\VirtualPiggyBank\VirtualPiggyBank.Core\obj\Debug\netstandard2.1\VirtualPiggyBank.Core.csprojAssemblyReference.cache
+C:\Users\jasta\Source\Repos\VirtualPiggyBank\VirtualPiggyBank.Core\obj\Debug\netstandard2.1\VirtualPiggyBank.Core.AssemblyInfoInputs.cache
+C:\Users\jasta\Source\Repos\VirtualPiggyBank\VirtualPiggyBank.Core\obj\Debug\netstandard2.1\VirtualPiggyBank.Core.AssemblyInfo.cs
+C:\Users\jasta\Source\Repos\VirtualPiggyBank\VirtualPiggyBank.Core\obj\Debug\netstandard2.1\VirtualPiggyBank.Core.csproj.CoreCompileInputs.cache
+C:\Users\jasta\Source\Repos\VirtualPiggyBank\VirtualPiggyBank.Core\obj\Debug\netstandard2.1\VirtualPiggyBank.Core.dll
+C:\Users\jasta\Source\Repos\VirtualPiggyBank\VirtualPiggyBank.Core\obj\Debug\netstandard2.1\VirtualPiggyBank.Core.pdb

@@ -30,6 +30,10 @@ namespace VirtualPiggyBank
 
             var db = BankRepository.Connection();
 
+            db.CreateTable<Account>();
+            db.CreateTable<Transaction>();
+            db.CreateTable<QuickDeposit>();
+
             Accounts = db.CreateCommand("SELECT * FROM UserAccounts").ExecuteQuery<Account>();
 
             TableView.Source = new AccountListTableDataSource(this);
