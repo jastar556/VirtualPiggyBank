@@ -11,6 +11,7 @@ namespace VirtualPiggyBank
     public partial class AccountViewController : UIViewController
     {
         public Account Account;
+        
 
         public AccountViewController(IntPtr handle) : base(handle)
         {
@@ -19,6 +20,8 @@ namespace VirtualPiggyBank
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
+
+            NSNotificationCenter.DefaultCenter.AddObserver((NSString) "ReloadPage", reloadPage);
 
             var db = BankRepository.Connection();
 
@@ -32,6 +35,49 @@ namespace VirtualPiggyBank
             {
                 DismissModalViewController(true);
             };
+
+            DepositButton.TouchUpInside += (object sender, EventArgs e) =>
+            {
+                TransactionViewController transactionViewController =
+                    this.Storyboard.InstantiateViewController("TransactionViewController") as TransactionViewController;
+
+                if(transactionViewController != null)
+                {
+                    transactionViewController.ModalTransitionStyle = UIModalTransitionStyle.CoverVertical;
+                    transactionViewController.ModalPresentationStyle = UIModalPresentationStyle.Automatic;
+                    transactionViewController.account = Account;
+                    transactionViewController.TransactionType = "Deposit";
+
+                    PresentViewController(transactionViewController, true, null);
+                }
+            };
+
+            WithdrawlButton.TouchUpInside += (object sender, EventArgs e) =>
+            {
+                TransactionViewController transactionViewController =
+                    this.Storyboard.InstantiateViewController("TransactionViewController") as TransactionViewController;
+
+                if (transactionViewController != null)
+                {
+                    transactionViewController.ModalTransitionStyle = UIModalTransitionStyle.CoverVertical;
+                    transactionViewController.ModalPresentationStyle = UIModalPresentationStyle.Automatic;
+                    transactionViewController.account = Account;
+                    transactionViewController.TransactionType = "Withdrawal";
+
+                    PresentViewController(transactionViewController, true, null);
+                }
+            };
+        }
+
+        void reloadPage(NSNotification notification)
+        {
+            var db = BankRepository.Connection();
+            Account = db.Get<Account>(Account.Id);
+
+            BalanceLabel.Text = "$" + Account.Balance.ToString();
+
+            TransactionTableView.Source = new AccountTransactionTableDataSource(this);
+            TransactionTableView.ReloadData();
         }
     }
 }

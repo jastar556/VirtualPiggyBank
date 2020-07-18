@@ -24,6 +24,9 @@ namespace VirtualPiggyBank
         {
             base.ViewDidLoad();
 
+            
+            NSNotificationCenter.DefaultCenter.AddObserver((NSString)"ReloadPage", reloadPage);
+
             var db = BankRepository.Connection();
             
             Accounts = db.CreateCommand("SELECT * FROM UserAccounts").ExecuteQuery<Account>();
@@ -45,6 +48,16 @@ namespace VirtualPiggyBank
 
                 PresentViewController(accountViewController, true, null);
             } 
+        }
+
+        void reloadPage(NSNotification notification)
+        {
+            var db = BankRepository.Connection();
+            Accounts = db.CreateCommand("SELECT * FROM UserAccounts").ExecuteQuery<Account>();
+
+            TableView.Source = new AccountListTableDataSource(this);
+            TableView.ReloadData();
+
         }
     }
 }

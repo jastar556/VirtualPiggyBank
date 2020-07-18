@@ -75,6 +75,10 @@
     </Compile>
     <Compile Include="DataSource\AccountListTableDataSource.cs" />
     <Compile Include="DataSource\AccountTransactionTableDataSource.cs" />
+    <Compile Include="TransactionViewController.cs" />
+    <Compile Include="TransactionViewController.designer.cs">
+      <DependentUpon>TransactionViewController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccountViewController.cs" />
