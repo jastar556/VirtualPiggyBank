@@ -89,6 +89,26 @@ namespace VirtualPiggyBank
 
         void QuickDepositTransaction(string QuickDepositType)
         {
+            var db = BankRepository.Connection();
+
+            QuickDeposit quickDeposit = db.Get<QuickDeposit>(QuickDepositType);
+
+            Transaction transaction = new Transaction();
+            transaction.Account = Account.Id;
+            transaction.TransactionID = Guid.NewGuid();
+            transaction.Name = QuickDepositType;
+            transaction.TransAmount = quickDeposit.Amount;
+            transaction.Date = DateTime.Today;
+            db.Insert(transaction);
+
+
+            Account.Balance = AccountCalculations.CalculateBalance(Account);
+            db.InsertOrReplace(Account);
+            NSNotificationCenter.DefaultCenter.PostNotificationName("ReloadPage", null);
+
+            var CompletionAlertController = UIAlertController.Create("Transaction Complete", "The transaction has been completed", UIAlertControllerStyle.Alert);
+            CompletionAlertController.AddAction(UIAlertAction.Create("Ok", UIAlertActionStyle.Default, null));
+            PresentViewController(CompletionAlertController, true, null);
 
         }
 
