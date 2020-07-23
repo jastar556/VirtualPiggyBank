@@ -78,7 +78,9 @@ namespace VirtualPiggyBank
 
                 foreach(QuickDeposit quickDeposit in quickDeposits)
                 {
-                    QuickDepositAlertController.AddAction(UIAlertAction.Create(quickDeposit.QuickDepositType, UIAlertActionStyle.Default, Action => {
+                    string buttonText = quickDeposit.QuickDepositType + " $" + quickDeposit.Amount;
+
+                    QuickDepositAlertController.AddAction(UIAlertAction.Create(buttonText, UIAlertActionStyle.Default, Action => {
                         QuickDepositTransaction(quickDeposit.QuickDepositType);
                     }));
                 }

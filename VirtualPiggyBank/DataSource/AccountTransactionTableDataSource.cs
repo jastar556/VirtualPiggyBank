@@ -30,7 +30,7 @@ namespace VirtualPiggyBank.DataSource
         public override UITableViewCell GetCell(UITableView tableView, NSIndexPath indexPath)
         {
             UITableViewCell cell = tableView.DequeueReusableCell(cellIdentifier);
-
+            
             if (cell == null)
             {
                 cell = new UITableViewCell(UITableViewCellStyle.Value1, cellIdentifier);

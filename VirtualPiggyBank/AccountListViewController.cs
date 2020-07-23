@@ -63,6 +63,37 @@ namespace VirtualPiggyBank
             } 
         }
 
+        public void NewAccount()
+        {
+            Account NewAccount = new Account();
+
+            NewAccount.Balance = 0;
+            NewAccount.Id = Guid.NewGuid();
+
+            var NewAccountAlertController = UIAlertController.Create("New Account", "What is the name of the new piggybank?", UIAlertControllerStyle.Alert);
+            NewAccountAlertController.AddTextField(field => { });
+            NewAccountAlertController.AddAction(UIAlertAction.Create("Add", UIAlertActionStyle.Default, action =>
+            {
+                if(NewAccountAlertController.TextFields[0].Text != "")
+                {
+                    NewAccount.Name = NewAccountAlertController.TextFields[0].Text;
+                    var db = BankRepository.Connection();
+                    db.Insert(NewAccount);
+                    reloadPage(null);
+                }
+                else
+                {
+                    var ErrorAlertController = UIAlertController.Create("Error", "You must enter a name in order to save a new piggybank", UIAlertControllerStyle.Alert);
+                    ErrorAlertController.AddAction(UIAlertAction.Create("Ok", UIAlertActionStyle.Default, null));
+                    PresentViewController(ErrorAlertController, true, null);
+                }
+                
+            }));
+            PresentViewController(NewAccountAlertController, true, null);
+
+            
+        }
+
         void reloadPage(NSNotification notification)
         {
             var db = BankRepository.Connection();
