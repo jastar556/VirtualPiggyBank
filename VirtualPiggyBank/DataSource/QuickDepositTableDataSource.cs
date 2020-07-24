@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
+using CoreGraphics;
 using Foundation;
 using UIKit;
 using VirtualPiggyBank.Core.Model;
@@ -27,6 +27,22 @@ namespace VirtualPiggyBank.DataSource
             quickDepositTypes = db.CreateCommand("SELECT * FROM QuickDepositTypes").ExecuteQuery<QuickDeposit>();
         }
 
+        public override nfloat GetHeightForHeader(UITableView tableView, nint section)
+        {
+            return 40;
+        }
+
+        public override UIView GetViewForHeader(UITableView tableView, nint section)
+        {
+            // I just swapped Height | Width in following line
+            UILabel lblHeader = new UILabel(new CGRect(1, 1, tableView.SectionHeaderHeight, tableView.Frame.Width));
+            lblHeader.Font = UIFont.FromName("TimesNewRomanPS-BoldMT", 25);
+            lblHeader.BackgroundColor = UIColor.SystemGray2Color;
+            lblHeader.Text = "Quick Deposit Choices";
+            lblHeader.TextAlignment = UITextAlignment.Center;
+            return lblHeader;
+        }
+
         public override UITableViewCell GetCell(UITableView tableView, NSIndexPath indexPath)
         {
             UITableViewCell cell = tableView.DequeueReusableCell(cellIdentifier);
@@ -36,16 +52,63 @@ namespace VirtualPiggyBank.DataSource
                 cell = new UITableViewCell(UITableViewCellStyle.Value1, cellIdentifier);
             }
 
-            QuickDeposit quickDeposit = quickDepositTypes[indexPath.Row];
-            cell.TextLabel.Text = quickDeposit.QuickDepositType;
-            cell.DetailTextLabel.Text = "$" + quickDeposit.Amount.ToString();
+            if(indexPath.Row == quickDepositTypes.Count)
+            {
+                cell.TextLabel.Text = "New Quick Deposit choice";
+                cell.DetailTextLabel.Text = "";
+            }
+            else
+            {
+                QuickDeposit quickDeposit = quickDepositTypes[indexPath.Row];
+                cell.TextLabel.Text = quickDeposit.QuickDepositType;
+                cell.DetailTextLabel.Text = "$" + quickDeposit.Amount.ToString();
+            }
 
             return cell;
         }
 
+        public override bool CanEditRow(UITableView tableView, NSIndexPath indexPath)
+        {
+            return true; // return false if you wish to disable editing for a specific indexPath or for all rows
+        }
+
+        public override void CommitEditingStyle(UITableView tableView, UITableViewCellEditingStyle editingStyle, NSIndexPath indexPath)
+        {
+            switch (editingStyle)
+            {
+                case UITableViewCellEditingStyle.Delete:
+                    QuickDeposit deletedQuickDeposit = quickDepositTypes[indexPath.Row];
+                    quickDepositTypes.Remove(deletedQuickDeposit);
+                    var db = BankRepository.Connection();
+                    if (db.Delete(deletedQuickDeposit) == 1)
+                    {
+                        tableView.ReloadData();
+                    }
+                    break;
+            }
+        }
+
         public override nint RowsInSection(UITableView tableView, nint section)
         {
-            return quickDepositTypes.Count;
+            return quickDepositTypes.Count + 1;
+        }
+
+
+
+        public override void RowSelected(UITableView tableView, NSIndexPath indexPath)
+        {
+            if(indexPath.Row == quickDepositTypes.Count)
+            {
+                if(quickDepositTypes.Count < 5)
+                {
+                    callingController.NewQuickDeposit();
+                }
+                else if(quickDepositTypes.Count >= 5)
+                {
+                    callingController.MaxQuickDepositsReached();
+                }
+                
+            }
         }
     }
 }

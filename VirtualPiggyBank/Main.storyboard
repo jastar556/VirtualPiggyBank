@@ -375,7 +375,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="16944" translatesAutoresizingMaskIntoConstraints="NO">
-                                <rect key="frame" x="16" y="133" width="343" height="211"/>
+                                <rect key="frame" x="16" y="133" width="343" height="409"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="16945" style="IBUITableViewCellStyleValue1" textLabel="18475" detailTextLabel="18476" reuseIdentifier="ComponentCell">
@@ -409,7 +409,7 @@
                             <constraint id="17552" firstItem="16944" firstAttribute="top" secondItem="16414" secondAttribute="topMargin" constant="113"/>
                             <constraint id="17701" firstItem="16944" firstAttribute="leading" secondItem="16414" secondAttribute="leadingMargin"/>
                             <constraint id="17852" firstAttribute="trailingMargin" secondItem="16944" secondAttribute="trailing"/>
-                            <constraint id="18008" firstAttribute="bottomMargin" secondItem="16944" secondAttribute="bottom" constant="323"/>
+                            <constraint id="18008" firstAttribute="bottomMargin" secondItem="16944" secondAttribute="bottom" constant="125"/>
                         </constraints>
                     </view>
                     <connections>

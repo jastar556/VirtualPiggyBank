@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using CoreGraphics;
 using Foundation;
 using UIKit;
 using VirtualPiggyBank.Core;
@@ -27,6 +28,17 @@ namespace VirtualPiggyBank.DataSource
             Transactions = db.CreateCommand(selectStatement).ExecuteQuery<Transaction>();
         }
 
+        public override UIView GetViewForHeader(UITableView tableView, nint section)
+        {
+            // I just swapped Height | Width in following line
+            UILabel lblHeader = new UILabel(new CGRect(1, 1, tableView.SectionHeaderHeight, tableView.Frame.Width));
+            lblHeader.Font = UIFont.FromName("TimesNewRomanPS-BoldMT", 25);
+            lblHeader.BackgroundColor = UIColor.SystemGray2Color;
+            lblHeader.Text = "Transactions";
+            lblHeader.TextAlignment = UITextAlignment.Center;
+            return lblHeader;
+        }
+
         public override UITableViewCell GetCell(UITableView tableView, NSIndexPath indexPath)
         {
             UITableViewCell cell = tableView.DequeueReusableCell(cellIdentifier);
@@ -39,7 +51,7 @@ namespace VirtualPiggyBank.DataSource
             Transaction transaction = Transactions[indexPath.Row];
             cell.TextLabel.Text = transaction.Name;
             cell.DetailTextLabel.Text = "$" + transaction.TransAmount.ToString();
-
+            cell.SelectionStyle = UITableViewCellSelectionStyle.None;
             return cell;
         }
 

@@ -27,6 +27,16 @@ namespace VirtualPiggyBank
 
             TransactionTypeLabel.Text = TransactionType;
 
+            var g = new UITapGestureRecognizer(() => View.EndEditing(true));
+            View.AddGestureRecognizer(g);
+
+            AmountTextField.KeyboardType = UIKeyboardType.NumberPad;
+            TransactionNameTextField.ShouldReturn = (textField) =>
+            {
+                TransactionNameTextField.EndEditing(true);
+                return true;
+            };
+            
             SubmitButton.TouchUpInside += (object sender, EventArgs e) =>
             {
                 if(TransactionNameTextField.Text != "" && AmountTextField.Text != "")

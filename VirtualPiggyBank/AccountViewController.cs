@@ -25,6 +25,8 @@ namespace VirtualPiggyBank
 
             NSNotificationCenter.DefaultCenter.AddObserver((NSString) "ReloadPage", reloadPage);
 
+            
+
             var db = BankRepository.Connection();
 
             AccountNameLabel.Text = Account.Name;
