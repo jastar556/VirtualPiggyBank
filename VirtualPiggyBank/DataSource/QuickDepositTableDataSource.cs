@@ -56,6 +56,7 @@ namespace VirtualPiggyBank.DataSource
             {
                 cell.TextLabel.Text = "New Quick Deposit Choice";
                 cell.DetailTextLabel.Text = "";
+                
             }
             else
             {
@@ -69,7 +70,15 @@ namespace VirtualPiggyBank.DataSource
 
         public override bool CanEditRow(UITableView tableView, NSIndexPath indexPath)
         {
-            return true; // return false if you wish to disable editing for a specific indexPath or for all rows
+            if(indexPath.Row == quickDepositTypes.Count)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+             
         }
 
         public override void CommitEditingStyle(UITableView tableView, UITableViewCellEditingStyle editingStyle, NSIndexPath indexPath)
