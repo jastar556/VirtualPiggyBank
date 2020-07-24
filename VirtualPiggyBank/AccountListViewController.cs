@@ -70,8 +70,9 @@ namespace VirtualPiggyBank
             NewAccount.Balance = 0;
             NewAccount.Id = Guid.NewGuid();
 
-            var NewAccountAlertController = UIAlertController.Create("New Account", "What is the name of the new piggybank?", UIAlertControllerStyle.Alert);
+            var NewAccountAlertController = UIAlertController.Create("New Piggybank", "What is the name of the new piggybank?", UIAlertControllerStyle.Alert);
             NewAccountAlertController.AddTextField(field => { });
+            NewAccountAlertController.TextFields[0].AutocapitalizationType = UITextAutocapitalizationType.Sentences;
             NewAccountAlertController.AddAction(UIAlertAction.Create("Add", UIAlertActionStyle.Default, action =>
             {
                 if(NewAccountAlertController.TextFields[0].Text != "")
@@ -89,9 +90,10 @@ namespace VirtualPiggyBank
                 }
                 
             }));
+            NewAccountAlertController.AddAction(UIAlertAction.Create("Cancel", UIAlertActionStyle.Cancel, null));
             PresentViewController(NewAccountAlertController, true, null);
 
-            
+            reloadPage(null);
         }
 
         void reloadPage(NSNotification notification)

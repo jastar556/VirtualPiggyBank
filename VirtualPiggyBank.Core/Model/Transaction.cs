@@ -19,7 +19,7 @@ namespace VirtualPiggyBank.Core
 
         public double TransAmount { get; set; }
 
-        public string Note { get; set; }
+        
 
         public Transaction()
         {

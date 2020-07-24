@@ -29,14 +29,28 @@ namespace VirtualPiggyBank
 
             var g = new UITapGestureRecognizer(() => View.EndEditing(true));
             View.AddGestureRecognizer(g);
-
-            AmountTextField.KeyboardType = UIKeyboardType.NumberPad;
+            //Setting up fields
+            AmountTextField.KeyboardType = UIKeyboardType.DecimalPad;
+            TransactionNameTextField.AutocapitalizationType = UITextAutocapitalizationType.Sentences;
             TransactionNameTextField.ShouldReturn = (textField) =>
             {
                 TransactionNameTextField.EndEditing(true);
                 return true;
             };
-            
+
+            AmountTextField.ShouldChangeCharacters = (textfield, range, replacementString) =>
+            {
+                var newLength = textfield.Text.Length + replacementString.Length - range.Length;
+                return newLength <= 10;
+            };
+
+            TransactionNameTextField.ShouldChangeCharacters = (textfield, range, replacementString) =>
+            {
+                var newLength = textfield.Text.Length + replacementString.Length - range.Length;
+                return newLength <= 28;
+            };
+
+            //button actions
             SubmitButton.TouchUpInside += (object sender, EventArgs e) =>
             {
                 if(TransactionNameTextField.Text != "" && AmountTextField.Text != "")
@@ -47,7 +61,6 @@ namespace VirtualPiggyBank
                     newTransaction.Date = DateTime.Today;
                     newTransaction.Name = TransactionNameTextField.Text;
                     newTransaction.TransAmount = double.Parse(AmountTextField.Text);
-                    newTransaction.Note = NoteTextfield.Text;
 
                     string confirmationString;
 

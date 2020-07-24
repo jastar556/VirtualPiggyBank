@@ -54,7 +54,7 @@ namespace VirtualPiggyBank.DataSource
 
             if(indexPath.Row == quickDepositTypes.Count)
             {
-                cell.TextLabel.Text = "New Quick Deposit choice";
+                cell.TextLabel.Text = "New Quick Deposit Choice";
                 cell.DetailTextLabel.Text = "";
             }
             else
@@ -63,7 +63,7 @@ namespace VirtualPiggyBank.DataSource
                 cell.TextLabel.Text = quickDeposit.QuickDepositType;
                 cell.DetailTextLabel.Text = "$" + quickDeposit.Amount.ToString();
             }
-
+            cell.SelectionStyle = UITableViewCellSelectionStyle.None;
             return cell;
         }
 

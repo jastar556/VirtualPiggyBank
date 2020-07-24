@@ -75,8 +75,17 @@ namespace VirtualPiggyBank
             QuickDepositButton.TouchUpInside += (object sender, EventArgs e) =>
             {
                 List<QuickDeposit> quickDeposits = db.CreateCommand("SELECT * FROM QuickDepositTypes").ExecuteQuery<QuickDeposit>();
+                string MenuString;
 
-                UIAlertController QuickDepositAlertController = UIAlertController.Create("Quick Deposit", "Select quick deposit option", UIAlertControllerStyle.Alert);
+                if(quickDeposits.Count == 0)
+                {
+                    MenuString = "There are no Quick Deposit choices available. Add them by clicking on the wrench from the piggy bank list screen and selecting 'New Quick Deposit Choice'.";
+                }
+                else
+                {
+                    MenuString = "Select quick deposit option";
+                }
+                UIAlertController QuickDepositAlertController = UIAlertController.Create("Quick Deposit", MenuString, UIAlertControllerStyle.Alert);
 
                 foreach(QuickDeposit quickDeposit in quickDeposits)
                 {

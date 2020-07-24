@@ -28,14 +28,6 @@ namespace VirtualPiggyBank
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UILabel NoteLabel { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UITextField NoteTextfield { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton SubmitButton { get; set; }
 
         [Outlet]
@@ -65,16 +57,6 @@ namespace VirtualPiggyBank
             if (AmountTextField != null) {
                 AmountTextField.Dispose ();
                 AmountTextField = null;
-            }
-
-            if (NoteLabel != null) {
-                NoteLabel.Dispose ();
-                NoteLabel = null;
-            }
-
-            if (NoteTextfield != null) {
-                NoteTextfield.Dispose ();
-                NoteTextfield = null;
             }
 
             if (SubmitButton != null) {

@@ -34,6 +34,7 @@ namespace VirtualPiggyBank
 
             var QuickDepositNameAlert = UIAlertController.Create("Quick Deposit Name", "What is the name of the new Quick Deposit type?", UIAlertControllerStyle.Alert);
             QuickDepositNameAlert.AddTextField(field => { });
+            QuickDepositNameAlert.TextFields[0].AutocapitalizationType = UITextAutocapitalizationType.Sentences;
             QuickDepositNameAlert.AddAction(UIAlertAction.Create("Ok", UIAlertActionStyle.Default, action =>
             {
                 if(QuickDepositNameAlert.TextFields[0].Text != "")
@@ -42,6 +43,7 @@ namespace VirtualPiggyBank
 
                     var QuickDepositAmountAlert = UIAlertController.Create("Quick Deposit Amount", "What is the amount paid for " + newQuickDeposit.QuickDepositType + "?", UIAlertControllerStyle.Alert);
                     QuickDepositAmountAlert.AddTextField(field => { });
+                    QuickDepositAmountAlert.TextFields[0].KeyboardType = UIKeyboardType.DecimalPad;
                     QuickDepositAmountAlert.AddAction(UIAlertAction.Create("Ok", UIAlertActionStyle.Default, Action =>
                     {
                         if (QuickDepositAmountAlert.TextFields[0].Text != "")

@@ -260,16 +260,19 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7803" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES" text="Amount">
-                                <rect key="frame" x="46" y="148" width="62" height="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7803" translatesAutoresizingMaskIntoConstraints="NO" text="Amount">
+                                <rect key="frame" x="46" y="267.5" width="60" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="7830" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES">
-                                <rect key="frame" x="113" y="141.5" width="216" height="34"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="7830" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="129" y="264" width="198" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <constraints>
+                                    <constraint id="23280" firstAttribute="width" constant="198"/>
+                                </constraints>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7967" translatesAutoresizingMaskIntoConstraints="NO" text="Account Name" misplaced="YES">
                                 <rect key="frame" x="26" y="87.5" width="323" height="27.5"/>
@@ -277,33 +280,18 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8023" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES">
-                                <rect key="frame" x="46" y="198" width="62" height="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8023" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="46" y="167.5" width="45" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="8024" translatesAutoresizingMaskIntoConstraints="NO">
-                                <rect key="frame" x="116" y="195.5" width="213" height="34"/>
+                                <rect key="frame" x="129" y="161.5" width="213" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <constraints>
                                     <constraint id="13061" firstAttribute="width" constant="213"/>
-                                </constraints>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notes: " textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8025" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES">
-                                <rect key="frame" x="46" y="252" width="62" height="20"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" borderStyle="roundedRect" minimumFontSize="17" id="8027" translatesAutoresizingMaskIntoConstraints="NO">
-                                <rect key="frame" x="125" y="254" width="204" height="100"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <constraints>
-                                    <constraint id="8102" firstAttribute="height" constant="100"/>
-                                    <constraint id="8103" firstAttribute="width" constant="97"/>
                                 </constraints>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="13380" translatesAutoresizingMaskIntoConstraints="NO">
@@ -326,24 +314,19 @@
                             <constraint id="8010" firstItem="7967" firstAttribute="top" secondItem="7780" secondAttribute="bottom" constant="10"/>
                             <constraint id="8018" firstItem="7967" firstAttribute="leading" secondItem="7777" secondAttribute="leadingMargin" constant="10"/>
                             <constraint id="8022" firstAttribute="trailingMargin" secondItem="7967" secondAttribute="trailing" constant="10"/>
-                            <constraint id="9732" firstItem="8025" firstAttribute="top" secondItem="8023" secondAttribute="bottom" constant="33"/>
-                            <constraint id="9812" firstItem="8023" firstAttribute="top" secondItem="7803" secondAttribute="bottom" constant="30"/>
-                            <constraint id="9896" firstItem="7803" firstAttribute="top" secondItem="7967" secondAttribute="bottom" constant="30"/>
-                            <constraint id="9979" firstItem="7830" firstAttribute="top" secondItem="7967" secondAttribute="bottom" constant="24"/>
+                            <constraint id="9812" firstItem="8023" firstAttribute="top" secondItem="7967" secondAttribute="bottom" constant="50"/>
+                            <constraint id="9896" firstItem="7803" firstAttribute="top" secondItem="7967" secondAttribute="bottom" constant="150"/>
                             <constraint id="11147" firstItem="7803" firstAttribute="leading" secondItem="7777" secondAttribute="leadingMargin" constant="30"/>
-                            <constraint id="11562" firstItem="7830" firstAttribute="leading" secondItem="7803" secondAttribute="trailing" constant="25"/>
-                            <constraint id="11659" firstAttribute="trailingMargin" secondItem="7830" secondAttribute="trailing" constant="30"/>
+                            <constraint id="11659" firstAttribute="trailingMargin" secondItem="7830" secondAttribute="trailing" constant="32"/>
                             <constraint id="11741" firstItem="8023" firstAttribute="leading" secondItem="7777" secondAttribute="leadingMargin" constant="30"/>
-                            <constraint id="12786" firstItem="8025" firstAttribute="leading" secondItem="7777" secondAttribute="leadingMargin" constant="30"/>
-                            <constraint id="13059" firstItem="7777" firstAttribute="trailing" secondItem="8024" secondAttribute="trailing" constant="46"/>
-                            <constraint id="13060" firstItem="8024" firstAttribute="top" secondItem="7777" secondAttribute="top" constant="195"/>
-                            <constraint id="13062" firstItem="8027" firstAttribute="leading" secondItem="7777" secondAttribute="leading" constant="125"/>
-                            <constraint id="13063" firstItem="8027" firstAttribute="top" secondItem="7777" secondAttribute="top" constant="254"/>
+                            <constraint id="13059" firstItem="7777" firstAttribute="trailing" secondItem="8024" secondAttribute="trailing" constant="33"/>
+                            <constraint id="13060" firstItem="8024" firstAttribute="top" secondItem="7967" secondAttribute="bottom" constant="44"/>
                             <constraint id="13471" firstItem="13380" firstAttribute="leading" secondItem="7777" secondAttribute="leadingMargin" constant="100"/>
                             <constraint id="13480" firstAttribute="trailingMargin" secondItem="13380" secondAttribute="trailing" constant="100"/>
                             <constraint id="13500" firstAttribute="bottomMargin" secondItem="13380" secondAttribute="bottom" constant="206"/>
                             <constraint id="13591" firstItem="7774" firstAttribute="top" secondItem="13380" secondAttribute="bottom" constant="206"/>
-                            <constraint id="13683" firstAttribute="trailingMargin" secondItem="8027" secondAttribute="trailing" constant="30"/>
+                            <constraint id="20728" firstAttribute="trailingMargin" secondItem="8024" secondAttribute="trailing" constant="33"/>
+                            <constraint id="23559" firstItem="7830" firstAttribute="top" secondItem="8024" secondAttribute="bottom" constant="68.5"/>
                         </constraints>
                     </view>
                     <connections>
@@ -353,9 +336,7 @@
                         <outlet property="AccountNameLabel" destination="7967" id="name-outlet-7967"/>
                         <outlet property="TransactionNameLabel" destination="8023" id="name-outlet-8023"/>
                         <outlet property="TransactionNameTextField" destination="8024" id="name-outlet-8024"/>
-                        <outlet property="NoteLabel" destination="8025" id="name-outlet-8025"/>
                         <outlet property="SubmitButton" destination="13380" id="name-outlet-13380"/>
-                        <outlet property="NoteTextfield" destination="8027" id="name-outlet-8027"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7778" userLabel="First Responder" sceneMemberID="firstResponder"/>
