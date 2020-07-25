@@ -385,16 +385,24 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="23913" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="31" y="586" width="313" height="30"/>
+                                <state key="normal" title="Contact Developer"/>
+                            </button>
                         </subviews>
                         <constraints>
                             <constraint id="17552" firstItem="16944" firstAttribute="top" secondItem="16414" secondAttribute="topMargin" constant="113"/>
                             <constraint id="17701" firstItem="16944" firstAttribute="leading" secondItem="16414" secondAttribute="leadingMargin"/>
                             <constraint id="17852" firstAttribute="trailingMargin" secondItem="16944" secondAttribute="trailing"/>
-                            <constraint id="18008" firstAttribute="bottomMargin" secondItem="16944" secondAttribute="bottom" constant="125"/>
+                            <constraint id="18008" firstAttribute="top" secondItem="16944" secondAttribute="bottom" constant="44" firstItem="23913"/>
+                            <constraint id="23941" firstItem="23913" firstAttribute="leading" secondItem="16414" secondAttribute="leadingMargin" constant="15"/>
+                            <constraint id="23943" firstAttribute="trailingMargin" secondItem="23913" secondAttribute="trailing" constant="15"/>
+                            <constraint id="24087" firstAttribute="bottomMargin" secondItem="23913" secondAttribute="bottom" constant="51"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="QuickDepositTableView" destination="16944" id="name-outlet-16944"/>
+                        <outlet property="ContactButton" destination="23913" id="name-outlet-23913"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="16415" userLabel="First Responder" sceneMemberID="firstResponder"/>

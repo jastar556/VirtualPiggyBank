@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Foundation;
 using UIKit;
 using VirtualPiggyBank.Core;
+using VirtualPiggyBank.Core.Repo;
 
 namespace VirtualPiggyBank.DataSource
 {
@@ -33,7 +34,7 @@ namespace VirtualPiggyBank.DataSource
 
             if (indexPath.Row == Accounts.Count)
             {
-                cell.TextLabel.Text = "New piggy bank";
+                cell.TextLabel.Text = "Click here to add new piggy bank";
                 cell.DetailTextLabel.Text = "";
             }
             else
@@ -44,6 +45,35 @@ namespace VirtualPiggyBank.DataSource
             }
 
             return cell;
+        }
+
+        public override bool CanEditRow(UITableView tableView, NSIndexPath indexPath)
+        {
+            if (indexPath.Row == Accounts.Count)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+
+        }
+
+        public override void CommitEditingStyle(UITableView tableView, UITableViewCellEditingStyle editingStyle, NSIndexPath indexPath)
+        {
+            switch (editingStyle)
+            {
+                case UITableViewCellEditingStyle.Delete:
+                    Account account = Accounts[indexPath.Row];
+                    Accounts.Remove(account);
+                    var db = BankRepository.Connection();
+                    if (db.Delete(account) == 1)
+                    {
+                        tableView.ReloadData();
+                    }
+                    break;
+            }
         }
 
         public override nint RowsInSection(UITableView tableview, nint section)

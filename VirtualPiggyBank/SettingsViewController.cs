@@ -1,9 +1,11 @@
 using Foundation;
 using System;
+using System.Threading.Tasks;
 using UIKit;
 using VirtualPiggyBank.Core.Model;
 using VirtualPiggyBank.Core.Repo;
 using VirtualPiggyBank.DataSource;
+using Xamarin.Essentials;
 
 namespace VirtualPiggyBank
 {
@@ -18,6 +20,12 @@ namespace VirtualPiggyBank
             base.ViewDidLoad();
 
             QuickDepositTableView.Source = new QuickDepositTableDataSource(this);
+
+            ContactButton.TouchUpInside += (object sender, EventArgs e) =>
+            {
+                var address = "jacob@astarinfosec.com";
+                Email.ComposeAsync(null, null, address);
+            };
         }
 
         internal void MaxQuickDepositsReached()

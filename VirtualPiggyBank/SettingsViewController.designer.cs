@@ -16,10 +16,19 @@ namespace VirtualPiggyBank
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton ContactButton { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UITableView QuickDepositTableView { get; set; }
 
         void ReleaseDesignerOutlets ()
         {
+            if (ContactButton != null) {
+                ContactButton.Dispose ();
+                ContactButton = null;
+            }
+
             if (QuickDepositTableView != null) {
                 QuickDepositTableView.Dispose ();
                 QuickDepositTableView = null;

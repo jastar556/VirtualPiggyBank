@@ -54,7 +54,7 @@ namespace VirtualPiggyBank.DataSource
 
             if(indexPath.Row == quickDepositTypes.Count)
             {
-                cell.TextLabel.Text = "New Quick Deposit Choice";
+                cell.TextLabel.Text = "Click here to add Quick Deposit Choice";
                 cell.DetailTextLabel.Text = "";
                 
             }
