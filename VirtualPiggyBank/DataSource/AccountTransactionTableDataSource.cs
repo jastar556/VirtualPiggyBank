@@ -35,18 +35,6 @@ namespace VirtualPiggyBank.DataSource
 
             Transactions = db.CreateCommand(selectStatement).ExecuteQuery<Transaction>();
 
-            //foreach (Transaction transaction in Transactions)
-            //{
-            //    if (Dates.ContainsKey(transaction.Date.Date))
-            //    {
-            //        Dates[transaction.Date]++;
-            //    }
-            //    else
-            //    {
-            //        Dates.Add(transaction.Date.Date, 1);
-            //    }
-            //}
-
             foreach (Transaction transaction in Transactions)
             {
                 string date = transaction.Date.ToShortDateString();
