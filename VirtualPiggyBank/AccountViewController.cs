@@ -111,7 +111,7 @@ namespace VirtualPiggyBank
             transaction.TransactionID = Guid.NewGuid();
             transaction.Name = QuickDepositType;
             transaction.TransAmount = quickDeposit.Amount;
-            transaction.Date = DateTime.Today;
+            transaction.Date = DateTime.Now;
             db.Insert(transaction);
 
 

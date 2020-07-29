@@ -14,8 +14,8 @@ namespace VirtualPiggyBank.DataSource
         List<Transaction> Transactions = new List<Transaction>();
         
 
-        string[] keys;
-        Dictionary<string, List<Transaction>> sections = new Dictionary<string, List<Transaction>>();
+        DateTime[] keys;
+        Dictionary<DateTime, List<Transaction>> sections = new Dictionary<DateTime, List<Transaction>>();
 
         AccountViewController callingController;
 
@@ -35,9 +35,15 @@ namespace VirtualPiggyBank.DataSource
 
             Transactions = db.CreateCommand(selectStatement).ExecuteQuery<Transaction>();
 
+            CompileSections();
+
+        }
+
+        void CompileSections()
+        {
             foreach (Transaction transaction in Transactions)
             {
-                string date = transaction.Date.ToShortDateString();
+                DateTime date = transaction.Date.Date;
                 if (sections.ContainsKey(date))
                 {
                     sections[date].Add(transaction);
@@ -49,8 +55,25 @@ namespace VirtualPiggyBank.DataSource
                 }
             }
 
+            SortSections();
+            
+        }
+
+        void SortSections()
+        {
+            sections = sections.OrderByDescending(section => section.Key).ToDictionary(obj => obj.Key, obj => obj.Value);
+
             keys = sections.Keys.ToArray();
 
+            foreach (DateTime key in keys)
+            {
+                List<Transaction> unsortedList = sections[key];
+
+                List<Transaction> sortedList = unsortedList.OrderByDescending(obj => obj.Date).ToList();
+
+                sections[key] = sortedList;
+            }
+            
         }
 
         public override UIView GetViewForHeader(UITableView tableView, nint section)
@@ -59,7 +82,7 @@ namespace VirtualPiggyBank.DataSource
             UILabel lblHeader = new UILabel(new CGRect(1, 1, tableView.SectionHeaderHeight, tableView.Frame.Width));
             lblHeader.Font = UIFont.FromName("TimesNewRomanPS-BoldMT", 20);
             lblHeader.BackgroundColor = UIColor.SystemGray2Color;
-            lblHeader.Text = keys[section];
+            lblHeader.Text = keys[section].ToShortDateString();
             lblHeader.TextAlignment = UITextAlignment.Center;
             return lblHeader;
         }

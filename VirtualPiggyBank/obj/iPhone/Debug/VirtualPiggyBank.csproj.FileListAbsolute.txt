@@ -67,6 +67,11 @@ C:/Users/jasta/Source/Repos/VirtualPiggyBank/VirtualPiggyBank/obj/iPhone/Debug/C
 /Users/jacobastar/Projects/VirtualPiggyBank/VirtualPiggyBank/bin/iPhone/Debug/Xamarin.Essentials.pdb
 /Users/jacobastar/Projects/VirtualPiggyBank/VirtualPiggyBank/bin/iPhone/Debug/VirtualPiggyBank.Core.dll
 /Users/jacobastar/Projects/VirtualPiggyBank/VirtualPiggyBank/bin/iPhone/Debug/VirtualPiggyBank.Core.pdb
+/Users/jacobastar/Projects/VirtualPiggyBank/VirtualPiggyBank/obj/iPhone/Debug/VirtualPiggyBank.csprojAssemblyReference.cache
+/Users/jacobastar/Projects/VirtualPiggyBank/VirtualPiggyBank/obj/iPhone/Debug/VirtualPiggyBank.csproj.CoreCompileInputs.cache
+/Users/jacobastar/Projects/VirtualPiggyBank/VirtualPiggyBank/obj/iPhone/Debug/VirtualPiggyBank.csproj.CopyComplete
+/Users/jacobastar/Projects/VirtualPiggyBank/VirtualPiggyBank/obj/iPhone/Debug/VirtualPiggyBank.exe
+/Users/jacobastar/Projects/VirtualPiggyBank/VirtualPiggyBank/obj/iPhone/Debug/VirtualPiggyBank.pdb
 /Users/jacobastar/Projects/VirtualPiggyBank/VirtualPiggyBank/obj/iPhone/Debug/device-builds/iphone12.3-13.4.1/ibtool/_BundleResourceWithLogicalName.items
 /Users/jacobastar/Projects/VirtualPiggyBank/VirtualPiggyBank/obj/iPhone/Debug/device-builds/iphone12.3-13.4.1/actool/_PartialAppManifest.items
 /Users/jacobastar/Projects/VirtualPiggyBank/VirtualPiggyBank/obj/iPhone/Debug/device-builds/iphone12.3-13.4.1/actool/_BundleResourceWithLogicalName.items
@@ -74,8 +79,3 @@ C:/Users/jasta/Source/Repos/VirtualPiggyBank/VirtualPiggyBank/obj/iPhone/Debug/C
 /Users/jacobastar/Projects/VirtualPiggyBank/VirtualPiggyBank/obj/iPhone/Debug/device-builds/iphone12.3-13.4.1/coremlc/_BundleResourceWithLogicalName.items
 /Users/jacobastar/Projects/VirtualPiggyBank/VirtualPiggyBank/obj/iPhone/Debug/device-builds/iphone12.3-13.4.1/optimized/Entitlements.plist
 /Users/jacobastar/Projects/VirtualPiggyBank/VirtualPiggyBank/obj/iPhone/Debug/device-builds/iphone12.3-13.4.1/optimized/
-/Users/jacobastar/Projects/VirtualPiggyBank/VirtualPiggyBank/obj/iPhone/Debug/VirtualPiggyBank.csprojAssemblyReference.cache
-/Users/jacobastar/Projects/VirtualPiggyBank/VirtualPiggyBank/obj/iPhone/Debug/VirtualPiggyBank.csproj.CoreCompileInputs.cache
-/Users/jacobastar/Projects/VirtualPiggyBank/VirtualPiggyBank/obj/iPhone/Debug/VirtualPiggyBank.csproj.CopyComplete
-/Users/jacobastar/Projects/VirtualPiggyBank/VirtualPiggyBank/obj/iPhone/Debug/VirtualPiggyBank.exe
-/Users/jacobastar/Projects/VirtualPiggyBank/VirtualPiggyBank/obj/iPhone/Debug/VirtualPiggyBank.pdb

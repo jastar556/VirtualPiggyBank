@@ -58,7 +58,7 @@ namespace VirtualPiggyBank
                     Transaction newTransaction = new Transaction();
                     newTransaction.TransactionID = Guid.NewGuid();
                     newTransaction.Account = account.Id;
-                    newTransaction.Date = DateTime.Today;
+                    newTransaction.Date = DateTime.Now;
                     newTransaction.Name = TransactionNameTextField.Text;
                     newTransaction.TransAmount = double.Parse(AmountTextField.Text);
 
